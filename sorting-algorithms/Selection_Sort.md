@@ -21,3 +21,13 @@ public static int findMinIndex(int[] arr, int start) {
     }
     return minIndex;
 }
+
+## Swepping Element
+public static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];  // Store one element temporarily
+    arr[i] = arr[j];    // Swap
+    arr[j] = temp;      // Complete the swap
+}
+
+
+
