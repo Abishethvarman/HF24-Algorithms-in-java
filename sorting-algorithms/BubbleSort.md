@@ -5,7 +5,9 @@ Bubble Sort is a simple sorting algorithm that repeatedly steps through the list
 
 ## Code Implementation
 ```java
-public class BubbleSort {
+public class SortingAlgorithms {
+
+    // Bubble Sort implementation
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
@@ -19,15 +21,47 @@ public class BubbleSort {
         }
     }
 
+    // Selection Sort implementation
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
     public static void main(String[] args) {
-        int[] arr = {64, 34, 25, 12, 22, 11, 90};
-        bubbleSort(arr);
-        for (int num : arr) {
+        int[] bubbleArray = {64, 34, 25, 12, 22, 11, 90};
+        int[] selectionArray = {64, 25, 12, 22, 11};
+
+        // Testing Bubble Sort
+        System.out.print("Bubble Sort Result: ");
+        bubbleSort(bubbleArray);
+        for (int num : bubbleArray) {
+            System.out.print(num + " ");
+        }
+
+        System.out.println();  // Separate output with a line break
+
+        // Testing Selection Sort
+        System.out.print("Selection Sort Result: ");
+        selectionSort(selectionArray);
+        for (int num : selectionArray) {
             System.out.print(num + " ");
         }
     }
 }
+
 ```
+
+
 
 ## Use Cases
 * Used in simple scenarios where performance isn't a concern.
