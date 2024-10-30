@@ -28,7 +28,22 @@ public class Selection_Sort {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-
+// Main method to test the code
+public static void main(String[] args) {
+    int[] arr = {64, 25, 12, 22, 11};  // Sample array
+    
+    // Test Part 1: Find the minimum index in the unsorted portion
+    int minIndex = findMinIndex(arr, 0);  // Find minimum element from index 0
+    System.out.println("Index of the minimum element: " + minIndex);
+    System.out.println("Minimum element: " + arr[minIndex]);
+    
+    // Test Part 2: Swap the first element with the minimum element
+    swap(arr, 0, minIndex);
+    System.out.println("Array after swapping first element with the minimum element:");
+    for (int num : arr) {
+        System.out.print(num + " ");
+    }
+}
     
 }
 
